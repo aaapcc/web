@@ -1,0 +1,100 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+<title>下载按钮</title>  
+<style>  
+  /* 样式可以根据实际需要进行调整 */  
+  .btn-danger {  
+    background-color: red;  
+    color: white;  
+    border: none;  
+    padding: 10px 20px;  
+    text-align: center;  
+    text-decoration: none;  
+    display: inline-block;  
+    font-size: 16px;  
+    margin: 4px 2px;  
+    cursor: pointer;  
+  }  
+    
+  .text-right {  
+    text-align: right;  
+  }  
+</style>  
+</head>  
+<body>  
+  
+<div class="down_btn_list">
+  <div class="row">
+    <div class="col-6 col-md-7">2018</div>
+    <div class="col-2 col-md-2">GalM</div>
+    <div class="col-4 col-md-3 text-right">
+      <a class="btn btn-primary" href="kkk.html" target="_blank" data-clipboard-text="GalM" data-mmid="down-mm-0">123下载</a>
+  </div>
+  <div class="row">
+    <div class="col-6 col-md-7">2019</div>
+    <div class="col-2 col-md-2">emaA</div>
+    <div class="col-4 col-md-3 text-right">
+      <a class="btn btn-primary" href="kkk.html" target="_blank" data-clipboard-text="emaA" data-mmid="down-mm-1">123下载</a></div>
+  </div>
+  <div class="row">
+    <div class="col-6 col-md-7">2020</div>
+    <div class="col-2 col-md-2">yT3N</div>
+    <div class="col-4 col-md-3 text-right">
+      <a class="btn btn-primary" href="kkk.html" target="_blank" data-clipboard-text="yT3N" data-mmid="down-mm-2">123下载</a></div>
+  </div>
+</div>
+
+
+<!-- tanc -->
+<div id="customAlert" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 20px; background-color: #fff; border: 1px solid #000; z-index: 9999;">  
+  <p>复制成功，点“确定”进入到下载页面</p>  
+  <button id="confirmBtn">确定</button>  
+  <button id="cancelBtn">取消</button>  
+</div>
+
+
+ 
+<script>  
+  // 获取所有的下载按钮和弹窗按钮  
+  const downloadButtons = document.querySelectorAll('.btn-primary');  
+  const customAlert = document.getElementById('customAlert');  
+  const confirmBtn = document.getElementById('confirmBtn');  
+  const cancelBtn = document.getElementById('cancelBtn');  
+  
+  downloadButtons.forEach(button => {  
+    button.addEventListener('click', function(event) {  
+      event.preventDefault(); // 阻止默认的链接跳转行为  
+  
+      // 获取data-clipboard-text的值和href属性值  
+      const clipboardText = this.getAttribute('data-clipboard-text');  
+      const href = this.getAttribute('href');  
+  
+      // 复制文本到剪贴板  
+      navigator.clipboard.writeText(clipboardText).then(() => {  
+        // 显示自定义弹窗  
+        customAlert.style.display = 'block';  
+  
+        // 为确定和取消按钮添加事件监听器  
+        confirmBtn.addEventListener('click', () => {  
+          // 使用新窗口打开链接并隐藏弹窗  
+          window.open(href, '_blank');  
+          customAlert.style.display = 'none';  
+        });  
+  
+        cancelBtn.addEventListener('click', () => {  
+          // 隐藏弹窗  
+          customAlert.style.display = 'none';  
+        });  
+      }).catch(err => {  
+        console.error('复制失败:', err);  
+        customAlert.style.display = 'none'; // 隐藏弹窗，如果复制失败  
+      });  
+    });  
+  });  
+</script>
+  
+</body>  
+</html>
