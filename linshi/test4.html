@@ -31,23 +31,22 @@
     <div class="col-6 col-md-7">2018</div>
     <div class="col-2 col-md-2">GalM</div>
     <div class="col-4 col-md-3 text-right">
-      <a class="btn btn-primary" href="kkkb.html" target="_blank" data-clipboard-text="GalM" data-mmid="down-mm-0">123下载</a>
+      <a class="btn btn-primary" href="kkk.html" target="_blank" data-clipboard-text="GalM" data-mmid="down-mm-0">123下载</a>
   </div>
   <div class="row">
     <div class="col-6 col-md-7">2019</div>
     <div class="col-2 col-md-2">emaA</div>
     <div class="col-4 col-md-3 text-right">
-      <a class="btn btn-primary" href="kkkh.html" target="_blank" data-clipboard-text="emaA" data-mmid="down-mm-1">123下载</a></div>
+      <a class="btn btn-primary" href="kkk.html" target="_blank" data-clipboard-text="emaA" data-mmid="down-mm-1">123下载</a></div>
   </div>
   <div class="row">
     <div class="col-6 col-md-7">2020</div>
     <div class="col-2 col-md-2">yT3N</div>
     <div class="col-4 col-md-3 text-right">
-      <a class="btn btn-primary" href="kkk3.html" target="_blank" data-clipboard-text="yT3N" data-mmid="down-mm-2">123下载</a></div>
+      <a class="btn btn-primary" href="kkk.html" target="_blank" data-clipboard-text="yT3N" data-mmid="down-mm-2">123下载</a></div>
   </div>
 </div>
-  
-
+ 
 <script>  
   // 获取所有的下载按钮  
   const downloadButtons = document.querySelectorAll('.btn-primary');  
@@ -56,18 +55,17 @@
     button.addEventListener('click', function(event) {  
       event.preventDefault(); // 阻止默认的链接跳转行为  
   
-      // 获取data-clipboard-text的值  
+      // 获取data-clipboard-text的值和href属性值  
       const clipboardText = this.getAttribute('data-clipboard-text');  
+      const href = this.getAttribute('href');  
   
       // 复制文本到剪贴板  
       navigator.clipboard.writeText(clipboardText).then(() => {  
-        // 显示弹窗  
-        alert('复制成功，点“确定”进入到下载页面');  
-  
-        // 点击弹窗确定后，跳转到链接  
-        setTimeout(() => {  
-          window.location.href = this.getAttribute('href');  
-        }, 0);  
+        // 显示确认弹窗  
+        if (confirm('复制成功，点“确定”进入到下载页面')) {  
+          // 使用新窗口打开链接  
+          window.open(href, '_blank');  
+        }  
       }).catch(err => {  
         console.error('复制失败:', err);  
       });  
