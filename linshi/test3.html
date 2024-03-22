@@ -3,9 +3,25 @@
 <head>  
 <meta charset="UTF-8">  
 <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-<title>Download Buttons</title>  
+<title>下载按钮</title>  
 <style>  
-  /* 你可以在这里添加一些样式 */  
+  /* 样式可以根据实际需要进行调整 */  
+  .btn-danger {  
+    background-color: red;  
+    color: white;  
+    border: none;  
+    padding: 10px 20px;  
+    text-align: center;  
+    text-decoration: none;  
+    display: inline-block;  
+    font-size: 16px;  
+    margin: 4px 2px;  
+    cursor: pointer;  
+  }  
+    
+  .text-right {  
+    text-align: right;  
+  }  
 </style>  
 </head>  
 <body>  
@@ -29,33 +45,33 @@
     <div class="col-4 col-md-3 text-right">
       <a class="btn btn-danger" href="https://www.123.com/3.html" target="_blank" data-clipboard-text="yT3N" data-action="down_count" data-mmid="down-mm-2">123下载</a></div>
   </div>
-</div> 
+</div>
   
 <script>  
-// 获取所有的下载按钮  
-const downloadButtons = document.querySelectorAll('.btn-danger');  
+  // 获取所有的下载按钮  
+  const downloadButtons = document.querySelectorAll('.btn-danger');  
   
-downloadButtons.forEach(button => {  
-  button.addEventListener('click', function(event) {  
-    event.preventDefault(); // 阻止默认的链接跳转行为  
-      
-    // 获取data-clipboard-text的值  
-    const clipboardText = this.getAttribute('data-clipboard-text');  
-      
-    // 复制文本到剪贴板  
-    navigator.clipboard.writeText(clipboardText).then(() => {  
-      // 显示复制成功的提示  
-      alert('复制成功，点“确定”进入到下载页面。');  
-        
-      // 确认后跳转到链接  
-      if (confirm('确定跳转到下载页面吗？')) {  
-        window.location.href = this.getAttribute('href');  
-      }  
-    }).catch(err => {  
-      console.error('无法复制文本: ', err);  
+  downloadButtons.forEach(button => {  
+    button.addEventListener('click', function(event) {  
+      event.preventDefault(); // 阻止默认的链接跳转行为  
+  
+      // 获取data-clipboard-text的值  
+      const clipboardText = this.getAttribute('data-clipboard-text');  
+  
+      // 复制文本到剪贴板  
+      navigator.clipboard.writeText(clipboardText).then(() => {  
+        // 显示弹窗  
+        alert('复制成功，点“确定”进入到下载页面');  
+  
+        // 点击弹窗确定后，跳转到链接  
+        setTimeout(() => {  
+          window.location.href = this.getAttribute('href');  
+        }, 0);  
+      }).catch(err => {  
+        console.error('复制失败:', err);  
+      });  
     });  
   });  
-});  
 </script>  
   
 </body>  
