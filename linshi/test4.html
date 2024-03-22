@@ -48,7 +48,7 @@
       <div class="col-12 line-thead my-2" style="height:1px;background: rgba(136, 136, 136, 0.2);"></div>
   </div>
 </div>
-  
+
 <script>  
   // 获取所有的下载按钮  
   const downloadButtons = document.querySelectorAll('.btn-primary');  
@@ -57,24 +57,24 @@
     button.addEventListener('click', function(event) {  
       event.preventDefault(); // 阻止默认的链接跳转行为  
   
-      // 获取data-clipboard-text的值  
+      // 获取data-clipboard-text的值和href属性值  
       const clipboardText = this.getAttribute('data-clipboard-text');  
+      const downloadLink = this.getAttribute('href');  
   
       // 复制文本到剪贴板  
       navigator.clipboard.writeText(clipboardText).then(() => {  
-        // 显示弹窗  
-        alert('复制成功，点“确定”进入到下载页面');  
-  
-        // 点击弹窗确定后，跳转到链接  
-        setTimeout(() => {  
-          window.location.href = this.getAttribute('href');  
-        }, 0);  
+        // 显示确认弹窗  
+        if (confirm('复制成功，是否继续在新窗口打开下载页面？')) {  
+          // 用户点击了“确定”，在新窗口打开链接  
+          window.open(downloadLink, '_blank');  
+        }  
       }).catch(err => {  
         console.error('复制失败:', err);  
+        alert('复制失败，请检查您的浏览器设置。');  
       });  
     });  
   });  
-</script>  
+</script>
   
 </body>  
 </html>
