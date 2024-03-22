@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Art</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta content="" name="description" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<!-- App favicon -->
+<link rel="shortcut icon" href="static/img/favicon.ico">
+<!-- App css -->
+<link href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/bootstrap/4.6.1/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="//at.alicdn.com/t/c/font_4432210_tyix4q4jfgg.css" rel="stylesheet" type="text/css" />
+<link href="static/css/app.min.css" rel="stylesheet" type="text/css" />
+<!-- App js -->
+<script src="https://gh.static.qhaha.com/js/jquery/jquery-3.1.1.min.js"></script>
+<script src="https://gh.static.qhaha.com/js/jquery/jquery.qrcode-1.0.min.js"></script>
+</head>
+
+<body>
+
+<!-- Begin page -->
+<div id="wrapper">
+
+    <!-- Topbar Start -->
+    <div class="navbar-custom">
+        <ul class="topnav-menu float-right">
+
+            <li class="dropdown">
+                <a class="nav-link" data-toggle="dropdown" href="javascript:void(0);">
+                    <i class="iconfont icon-apple"></i>
+                    <span class="align-middle">Mac<i class="iconfont icon-dropdown-bottom"></i> </span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right">
+
+                    <!-- item-->
+                    <a href="windows.html" class="dropdown-item">
+                        <i class="iconfont icon-windows"></i> <span class="align-middle">Windows</span>
+                    </a>
+
+                    <!-- item-->
+                    <a href="mac.html" class="dropdown-item">
+                        <i class="iconfont icon-apple"></i> <span class="align-middle">Mac</span>
+                    </a>
+
+                    <!-- item-->
+                    <a href="android.html" class="dropdown-item">
+                        <i class="iconfont icon-android"></i> <span class="align-middle">Android</span>
+                    </a>
+
+                    <!-- item-->
+                    <a href="ios.html" class="dropdown-item">
+                        <i class="iconfont icon-apple"></i> <span class="align-middle">iOS</span>
+                    </a>
+
+                </div>
+            </li>
+
+        </ul>
+
+        <ul class="menu-left">
+            <li class="float-left">
+                <a href="index.html" class="logo">
+                    <span class="logo-lg">
+                        <img src="static/img/softku-logo.png" alt="">
+                    </span>
+                    <span class="logo-sm">
+                        <img src="static/img/softku-logo-sm.png" alt="">
+                    </span>
+                </a>
+            </li>
+            <li class="float-left">
+                <a class="button-menu-mobile navbar-toggle">
+                    <div class="lines">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </a>
+            </li>
+            <li class="app-search d-none d-md-block">
+                <form class="form-inline" action="search.html"> 
+                    <input name="s" type="text" class="form-control" placeholder="请输入您要搜索的内容..."> 
+                    <button class="btn btn-primary-color" type="submit"><i class="iconfont icon-search"></i></button> 
+                </form>
+            </li>
+        </ul>
+    </div>
+    <!-- end Topbar -->
+
+    <!-- ========== Left Sidebar Start ========== -->
+    <div class="left-side-menu">
+
+        <div class="slimscroll-menu">
+
+            <!--- Sidemenu -->
+            <div id="sidebar-menu">
+
+                <ul class="metismenu" id="side-menu">
+
+                    <li class="sidebar-menu_logo">
+                        <a href="index.html"><img src="static/img/softku-logo.png" alt=""></a>
+                    </li>
+
+                    <li class="search_m1644">
+                        <form class="form-inline" action="search.html"> 
+                            <input name="s" type="text" class="form-control" placeholder="Search..."> 
+                            <button class="btn btn-primary-color" type="submit"><i class="iconfont icon-search"></i></button> 
+                        </form>
+                    </li>
+
+                    <li>
+                        <a href="index.html">
+                            <i class="iconfont icon-home"></i>
+                            <span>首页</span>
+                        </a>
+                    </li>
+
+                    <li class="mm-active">
+                        <a href="#">
+                            <i class="iconfont icon-picture"></i>
+                            <span>图形图像</span>
+                            <i class="iconfont icon-menu-arrow-right"></i>
+                        </a>
+                        <ul class="nav-second-level" aria-expanded="false">
+                            <li class="mm-active">
+                                <a href="#">Adobe系列</a>
+                            </li>
+                            <li>
+                                <a href="#">图形设计</a>
+                            </li>
+                            <li>
+                                <a href="#">图像浏览</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <i class="iconfont icon-duomeiti"></i>
+                            <span>多媒体类</span>
+                            <i class="iconfont icon-menu-arrow-right"></i>
+                        </a>
+                        <ul class="nav-second-level" aria-expanded="false">
+                            <li>
+                                <a href="#">视频播放</a>
+                            </li>
+                            <li>
+                                <a href="#">音乐播放</a>
+                            </li>
+                            <li>
+                                <a href="#">视频转换</a>
+                            </li>
+                            <li>
+                                <a href="#">屏幕录制</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                             <i class="iconfont icon-gongjuxiang"></i>
+                            <span>实用工具</span>
+                            <i class="iconfont icon-menu-arrow-right"></i>
+                        </a>
+                        <ul class="nav-second-level" aria-expanded="false">
+                            <li>
+                                <a href="#">浏览器</a>
+                            </li>
+                            <li>
+                                <a href="#">下载工具</a>
+                            </li>
+                            <li>
+                                <a href="#">科学上网</a>
+                            </li>
+                            <li>
+                                <a href="#">远程控制</a>
+                            </li>
+                            <li>
+                                <a href="#">站长工具</a>
+                            </li>
+                            <li>
+                                <a href="#">截图工具</a>
+                            </li>
+                            <li>
+                                <a href="#">系统工具</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <i class="iconfont icon-guanli"></i>
+                            <span>应用软件</span>
+                            <i class="iconfont icon-menu-arrow-right"></i>
+                        </a>
+                        <ul class="nav-second-level" aria-expanded="false">
+                            <li>
+                                <a href="#">办公软件</a>
+                            </li>
+                            <li>
+                                <a href="#">文本编辑</a>
+                            </li>
+                            <li>
+                                <a href="#">解压软件</a>
+                            </li>
+                            <li>
+                                <a href="#">聊天软件</a>
+                            </li>
+                            <li>
+                                <a href="#">开发软件</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <i class="iconfont icon-settings"></i>
+                            <span>系统相关</span>
+                            <i class="iconfont icon-menu-arrow-right"></i>
+                        </a>
+                        <ul class="nav-second-level" aria-expanded="false">
+                            <li>
+                                <a href="#">虚拟机</a>
+                            </li>
+                            <li>
+                                <a href="#">开发环境</a>
+                            </li>
+                            <li>
+                                <a href="#">系统安全</a>
+                            </li>
+                            <li>
+                                <a href="#">MacOS系统</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                </ul>
+
+            </div>
+            <!-- End Sidebar -->
+
+            <div class="clearfix"></div>
+
+        </div>
+        <!-- Sidebar -left -->
+    </div>
+    <div class="mini_side_menu_mohu"></div>
+    <!-- Left Sidebar End -->
+
+    <!-- ============================================================== -->
+    <!-- Start Page Content here -->
+    <!-- ============================================================== -->
+
+    <div class="content-page">
+
+        <!-- 面包屑 -->
+        <nav class="mianbx">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#"><i class="iconfont icon-home_mbx"></i>首页</a></li>
+            <li class="breadcrumb-item"><a href="#">Windows</a></li>
+            <li class="breadcrumb-item"><a href="#">图形图像</a></li>
+            <li class="breadcrumb-item">Adobe系列</li>
+          </ol>
+        </nav>
+
+        <!-- Content start -->
+        <div class="content">
+
+            <div id="content" class="container my-4 my-md-3">
+                <div class="background-fx">
+                  <img src="static/img/art-shape/shape-01.svg" class="shape-01">
+                  <img src="static/img/art-shape/shape-02.svg" class="shape-02">
+                  <img src="static/img/art-shape/shape-03.svg" class="shape-03">
+                  <img src="static/img/art-shape/shape-04.svg" class="shape-04">
+                  <img src="static/img/art-shape/shape-05.svg" class="shape-05">
+                  <img src="static/img/art-shape/shape-06.svg" class="shape-06">
+                  <img src="static/img/art-shape/shape-07.svg" class="shape-07">
+                  <img src="static/img/art-shape/shape-08.svg" class="shape-08">
+                  <img src="static/img/art-shape/shape-09.svg" class="shape-09">
+                  <img src="static/img/art-shape/shape-10.svg" class="shape-10">
+                  <img src="static/img/art-shape/shape-11.svg" class="shape-11">
+                </div>
+
+                <!-- 软件介绍 -->
+                <div class="d-flex">
+                    <h1 class="h3 my-3">在不受支持的 Mac 计算机上安装 macOS High Sierra</h1>
+                </div>
+                <div class="d-flex flex-fill text-muted text-sm pb-4 border-bottom border-t">
+                    <span class="mr-3">分类：<a href="artlist.html">解决方案</a></span>
+                    <span class="mr-3">日期：2021-05-12</span>
+                    <div class="flex-fill"></div>
+                    <span class="views mr-3"><i class="iconfont icon-eye-line"></i> 2,231</span>
+                    <!-- <span class="mr-3"><a class="btn-like btn-link-like " href="javascript:;" data-action="post_like" data-id="735"><i class="iconfont icon-haoping"></i> <span class="like-count">0</span></a></span> -->
+                </div>
+                <div class="artcile-tag text-muted text-sm my-4">
+                    <p class="my-0"><i class="iconfont icon-huatifuhao"></i><span><a href="tag.html" rel="tag" class="ml-1">Adobe</a><a href="tag.html" rel="tag" class="ml-1">PS</a><a href="tag.html" rel="tag" class="ml-1">Photoshop</a></span></p>
+                </div>
+                <main class="content" role="main">
+                  <div class="content-wrap">
+                    <div class="content-layout">
+                      <div class="panel site-content card transparent">
+                        <div class="card-body p-0">
+                          <div class="apd-bg"></div>
+                          <div class="panel-body-cont panel-body single my-4">
+                            <blockquote>
+                              <p>RightFont 是一款适用于 Mac 的轻量级字体管理器，具有简单、美观的界面。它提供了许多功能来帮助您轻松管理所有本地字体。</p>
+                              <p>主要特征或能力：</p>
+                              <p>字体库。您现在可以在库中组织字体并将它们移动到任何地方以进行字体共享或备份。</p>
+                              <p>随时直接从菜单栏访问字体管理</p>
+                              <p>创建和管理字体列表</p>
+                              <p>直接访问 Adob&ZeroWidthSpace;&ZeroWidthSpace;e Creative Cloud（Photoshop、Illustrator、InDesign、Flash、AfterEffect）、Sketch 等中的字体。</p>
+                              <p>键入时即时搜索结果</p>
+                              <p>按分类（Sans Serif、Serif、Script 等）、字体宽度和字体粗细轻松过滤字体</p>
+                              <p>轻松集成 – 您可以将 RightFont 应用程序与您的设计软件结合使用。只需双击即可更改文本图层中使用的字体。</p>
+                              <p><img src="https://img.cf.qhaha.com/file/721e57a47d08039431dba.jpg"></p>
+                              <p><a href="https://dosdude1.com/catalina/" target="_blank" rel="noopener" class="external">https://dosdude1.com/catalina/</a></p>
+                            </blockquote>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- 软件介绍 END -->
+                      <div class="card">
+                          <div class="article-body">
+                        <div class="near-navigation">
+                            <div class="nav previous">
+                                <a class="near-permalink" href="art.html">
+                                    <span><i class="iconfont icon-fangxiangfangxiang-xiangzuo"></i>上一篇</span>
+                                    <h4 class="near-title">在不受支持的 Mac 计算机上安装 macOS Catalina</h4>
+                                </a>
+                            </div>
+                            <div class="nav next">
+                                <a class="near-permalink" href="art.html">
+                                    <span>下一篇<i class="iconfont icon-fangxiangfangxiang-xiangyou"></i></span>
+                                    <h4 class="near-title">无法打开“XXXX”，因为Apple无法检查其是否包含恶意软件。怎么解决?</h4>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                      <!-- 相关软件 -->
+                      <div class="d-flex mt-4 mb-2">
+                        <h2 class="h5 text-gray text-lg"><i class="iconfont icon-application icon-lg mr-1"></i>相关软件</h2>
+                        <div class="flex-fill"></div>
+                      </div>
+                      <div class="row mb-n4">
+                        <div class="col-4 col-md-3 col-lg-2 pb-1">
+                          <div class="card-app default list-item">
+                            <div class="media p-0 app-rounded" style="background-image: linear-gradient(130deg, #f9f9f9, #e8e8e8);">
+                              <a class="media-content" href="soft.html"><img src="https://gh.upload.qhaha.com/soft/adobe/adobe_ps.png"></a>
+                            </div>
+                            <div class="list-content text-center pt-2">
+                              <div class="list-body ">
+                                <a href="soft.html" target="_blank" class=" list-title text-md overflowClip_1">Spin 3D Plus</a>
+                                <div class="mt-1">
+                                  <div class="list-subtitle text-muted text-xs overflowClip_1">Spin 3D File Converter 是最稳定、易于使用且最全面的 3D 网格转换器之一。</div></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-4 col-md-3 col-lg-2 pb-1">
+                          <div class="card-app default list-item">
+                            <div class="media p-0 app-rounded" style="background-image: linear-gradient(130deg, transparent, transparent);">
+                              <a class="media-content" href="soft.html"><img src="https://gh.upload.qhaha.com/soft/adobe/adobe_ai.png"></a>
+                            </div>
+                            <div class="list-content text-center pt-2">
+                              <div class="list-body ">
+                                <a href="soft.html" target="_blank" class=" list-title text-md overflowClip_1">CorelCAD 2023</a>
+                                <div class="mt-1">
+                                  <div class="list-subtitle text-muted text-xs overflowClip_1">CorelCAD 是一种高效且经济高效的解决方案，用于创建工程项目所需的详细绘图。</div></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-4 col-md-3 col-lg-2 pb-1">
+                          <div class="card-app default list-item">
+                            <div class="media p-0 app-rounded" style="background-image: linear-gradient(130deg, #f9f9f9, #e8e8e8);">
+                              <a class="media-content" href="soft.html"><img src="https://gh.upload.qhaha.com/soft/adobe/adobe_pl.png"></a>
+                            </div>
+                            <div class="list-content text-center pt-2">
+                              <div class="list-body ">
+                                <a href="soft.html" target="_blank" class=" list-title text-md overflowClip_1">Pixelmator Pro</a>
+                                <div class="mt-1">
+                                  <div class="list-subtitle text-muted text-xs overflowClip_1"></div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-4 col-md-3 col-lg-2 pb-1">
+                          <div class="card-app default list-item">
+                            <div class="media p-0 app-rounded" style="background-image: linear-gradient(130deg, #f9f9f9, #e8e8e8);">
+                              <a class="media-content" href="soft.html"><img src="https://gh.upload.qhaha.com/soft/adobe/adobe_au.png"></a>
+                            </div>
+                            <div class="list-content text-center pt-2">
+                              <div class="list-body ">
+                                <a href="soft.html" target="_blank" class=" list-title text-md overflowClip_1">HitPaw Photo Enhancer</a>
+                                <div class="mt-1">
+                                  <div class="list-subtitle text-muted text-xs overflowClip_1">放大图像而不损失质量</div></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-4 col-md-3 col-lg-2 pb-1">
+                          <div class="card-app default list-item">
+                            <div class="media p-0 app-rounded" style="background-image: linear-gradient(130deg, #f9f9f9, #e8e8e8);">
+                              <a class="media-content" href="soft.html"><img src="https://gh.upload.qhaha.com/soft/adobe/adobe_me.png"></a>
+                            </div>
+                            <div class="list-content text-center pt-2">
+                              <div class="list-body ">
+                                <a href="soft.html" target="_blank" class=" list-title text-md overflowClip_1">Affinity Designer</a>
+                                <div class="mt-1">
+                                  <div class="list-subtitle text-muted text-xs overflowClip_1">Affinity Designer 是当今市场上最快、最用户友好且最准确的矢量图形设计软件。</div></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-4 col-md-3 col-lg-2 pb-1">
+                          <div class="card-app default list-item">
+                            <div class="media p-0 app-rounded" style="background-image: linear-gradient(130deg, #f9f9f9, #e8e8e8);">
+                              <a class="media-content" href="soft.html"><img src="https://gh.upload.qhaha.com/soft/adobe/adobe_xd.png"></a>
+                            </div>
+                            <div class="list-content text-center pt-2">
+                              <div class="list-body ">
+                                <a href="soft.html" target="_blank" class=" list-title text-md overflowClip_1">Artstudio Pro</a>
+                                <div class="mt-1">
+                                  <div class="list-subtitle text-muted text-xs overflowClip_1">Artstudio Pro，适用于 MacOS 和 iOS 的最强大的绘图和照片编辑应用程序。</div></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- 相关软件 END -->
+
+                      <!-- 评论 -->
+                      <div id="comments" class="comments">
+                        <div class="d-flex mt-4 mb-2">
+                            <h2 class="h5 text-gray text-lg"><i class="iconfont icon-pinglun icon-lg mr-1"></i>暂无评论</h2>
+                            <div class="flex-fill"></div>
+                            <!-- <a class="text-xs text-muted" href="list.html">查看全部<i class="iconfont icon-jiantou_liebiaoxiangyou"></i></a> -->
+                        </div>
+                        <div class="card">
+                          <div class="card-body">
+                            <div id="respond_box">
+                              <div id="respond" class="comment-respond">
+                                <form id="commentform" class="text-sm mb-4">
+                                  <div class="visitor-avatar d-flex flex-fill mb-2">
+                                    <img class="v-avatar rounded-circle" src="static/img/gravatar.jpg"></div>
+                                  <div class="comment-textarea mb-3">
+                                    <textarea name="comment" id="comment" class="form-control" placeholder="输入评论内容..." tabindex="4" cols="50" rows="3"></textarea>
+                                  </div>
+                                  <div id="comment-author-info" class="row  row-sm">
+                                    <div class="col-12 col-md-6 mb-3">
+                                      <input type="text" name="author" id="author" class="form-control" value="" size="22" placeholder="昵称" tabindex="2"></div>
+                                    <div class="col-12 col-md-6 mb-3">
+                                      <input type="text" name="email" id="email" class="form-control" value="" size="22" placeholder="邮箱" tabindex="3"></div>
+                                  </div>
+                                  <div class="com-footer d-flex justify-content-end flex-wrap">
+                                    <input type="hidden" id="_wpnonce" name="_wpnonce" value="e2a4535caf">
+                                    <input type="hidden" name="_wp_http_referer" value="/app/1043.html">
+                                    <a rel="nofollow" id="cancel-comment-reply-link" style="display: none;" href="javascript:;" class="btn btn-light custom_btn-outline mx-2">再想想</a>
+                                    <button class="btn btn-primary custom_btn-d ml-2" type="submit" id="submit">发表评论</button>
+                                </form>
+                                <div class="clear"></div>
+                              </div>
+                            </div>
+                            <div id="loading-comments">
+                              <span></span>
+                            </div>
+                            <div class="not-comment card">
+                              <div class="card-body nothing text-center color-d">暂无评论...</div>
+                            </div>
+
+                            <ul class="comment-list">
+                                <li class="comment even thread-even depth-1 comment" id="li-comment-4">
+                                    <div id="comment-4" class="comment_body d-flex flex-fill">    
+                                        <div class="profile mr-2 mr-md-3"> 
+                                            <img src="static/img/pl_avatar.jpg" width="96" height="96" alt="头像" class="avatar avatar-96wp-user-avatar wp-user-avatar-96 alignnone photo avatar-default">                
+                                        </div>                    
+                                        <section class="comment-text d-flex flex-fill flex-column">
+                                            <div class="comment-info d-flex align-items-center mb-1">
+                                                <div class="comment-author text-sm w-100"><strong>Username</strong></div>                                        
+                                            </div>
+                                            <div class="comment-content d-inline-block text-sm">
+                                                <p class="mb-1">支持M1吗</p>
+                                            </div>
+                                            <div class="d-flex flex-fill text-xs text-muted pt-2">
+                                                <div class="comment-meta">
+                                                    <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2023-07-26T15:21:56+08:00">6个月前</time></span>
+                                                </div>
+                                                <div class="flex-fill"></div>
+                                                <a rel="nofollow" class="comment-reply-link" href="#" data-commentid="4" data-postid="93" data-belowelement="comment-4" data-respondelement="respond" data-replyto="回复给Username" aria-label="回复给Username"><i class="iconfont icon-reply1 icon-lg"></i>回复</a>                    
+                                            </div>
+                                        </section>
+                                    </div>
+                                    <ul class="children">
+                                        <li class="comment byuser bypostauthor odd alt depth-2 comment" id="li-comment-5">
+                                            <div id="comment-5" class="comment_body d-flex flex-fill">    
+                                                <div class="profile mr-2 mr-md-3"> 
+                                                    <img src="static/img/pl_avatar.jpg" width="96" height="96" alt="头像" class="avatar avatar-96wp-user-avatar wp-user-avatar-96 alignnone photo avatar-default">                
+                                                </div>                    
+                                                <section class="comment-text d-flex flex-fill flex-column">
+                                                    <div class="comment-info d-flex align-items-center mb-1">
+                                                        <div class="comment-author text-sm w-100"><strong class="mr-1">Admin</strong><span class="rank">管理员</span>                        
+                                                        </div>                                        
+                                                    </div>
+                                                    <div class="comment-content d-inline-block text-sm">
+                                                        <p class="mb-1">有M1版本，但我还在整理中，后续会更新地址</p>
+                                                    </div>
+                                                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                                                        <div class="comment-meta">
+                                                        <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2023-07-26T15:37:28+08:00">6个月前</time></span>
+                                                        </div>
+                                                        <div class="flex-fill"></div>
+                                                        <a rel="nofollow" class="comment-reply-link" href="#" data-commentid="5" data-postid="93" data-belowelement="comment-5" data-respondelement="respond" data-replyto="回复给Admin" aria-label="回复给Admin"><i class="iconfont icon-reply1 icon-lg"></i>回复</a>                    
+                                                    </div>
+                                                </section>
+                                            </div>
+                                        </li>
+                                        <!-- #comment-## -->
+                                    </ul>
+                                    <!-- .children -->
+                                </li>
+                            </ul>
+
+                          </div>
+                        </div>
+                      </div>
+                      <!-- 评论 END -->
+                    </div>
+                    <!-- content-layout end -->
+                  </div>
+                  <!-- content-wrap end -->
+                </main>
+            </div>
+            
+        </div>
+        <!-- Content end -->
+
+        <!-- Footer Start -->
+        <footer class="footer text-muted text-sm mt-4">
+            <div class="container-fluid">
+                <div class="text-center">
+                    
+                    <div class="col-12 ">
+                        <a class="footer-logo" href="https://nav.iowen.cn">
+                            <img src="static/img/softku-logo.png" class="logo-light mb-1" alt="" height="32">
+                        </a>
+                    </div>
+
+                    <div class="col-md-12 text-muted text-center my-2"> 
+                        <p class="footer-links text-sm mb-2">
+                            <a href="#">免责声明</a>
+                            <a href="#">我要投稿</a>
+                            <a href="#">留言反馈</a>
+                            <a href="#">关于我们</a>
+                        </p>                                        
+                        <div class="footer-social my-2">
+                            <!-- <a class="rounded-circle bg-light qr-img" href="javascript:;" data-toggle="tooltip" data-placement="top" data-html="true" title="" data-original-title="<img src='static/img/qr/wechat_qrcode.png' height='100' width='100'>"><i class="iconfont icon-weixin"></i></a> -->
+                            <a class="rounded-circle bg-light" href="mqqwpa://im/chat?chat_type=wpa&amp;uin=12345678&amp;version=1&amp;src_type=web&amp;web_src=oicqzone.com" target="_blank" data-toggle="tooltip" data-placement="top" title="QQ" rel="external noopener nofollow">
+                            <i class="iconfont icon-qq"></i></a>
+                            <a class="rounded-circle bg-light" href="#" target="_blank" data-toggle="tooltip" data-placement="top" title="Telegram" rel="external noopener nofollow"><i class="iconfont icon-telegram"></i></a> 
+                            <a class="rounded-circle bg-light" href="mailto:ruanjian@email.com" target="_blank" data-toggle="tooltip" data-placement="top" title="E-Mail" rel="external noopener nofollow"><i class="iconfont icon-email"></i></a>                   
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        Copyright © <span class="dqnianfen"><script>window.onload=function(){var currentYear=new Date().getFullYear();var yearElement=document.querySelector('.dqnianfen');if(yearElement){yearElement.textContent=currentYear}};</script></span> ( <span class="yuming"><script language="javascript">host=document.domain;document.write(host)</script></span> ) <span class="pozhehao">- </span><br><span class="foot_domain">Powered by 软件宝库</span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- end Footer -->
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- End Page content -->
+    <!-- ============================================================== -->
+
+</div>
+<!-- END wrapper -->
+
+<!-- Vendor js -->
+<script src="static/js/vendor.min.js"></script>
+<!-- App js -->
+<script src="static/js/app.min.js"></script>
+
+</body>
+</html>

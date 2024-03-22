@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Amao</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta content="" name="description" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<!-- App favicon -->
+<link rel="shortcut icon" href="static/img/favicon.ico">
+<!-- App css -->
+<link href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/bootstrap/4.6.1/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="//at.alicdn.com/t/c/font_4432210_7a8064t9kte.css" rel="stylesheet" type="text/css" />
+<link href="static/css/app.min.css" rel="stylesheet" type="text/css" />
+<!-- App js -->
+<script src="https://gh.static.qhaha.com/js/jquery/jquery-3.1.1.min.js"></script>
+<script src="https://gh.static.qhaha.com/js/jquery/jquery.qrcode-1.0.min.js"></script>
+
+<style type="text/css">
+/*========================================================*/
+/*#sidebar-menu>ul>li>ins{ text-decoration: none; }*/
+#sidebar-menu>ul>li>ins{text-decoration: none; color:#5d6575;display:block;padding:14px 10px 14px 15px;position:relative;transition:all .4s;font-family:Barlow,sans-serif;font-size:15px;border-right:2px solid transparent;}
+#sidebar-menu>ul>li>ins>a:active,#sidebar-menu>ul>li>ins>a:focus,#sidebar-menu>ul>li>ins>a:hover{color:#3679f7;text-decoration:none;background: #f8f8f8;}
+#sidebar-menu>ul>li.mm-active{ background: #f7fbff; }
+#sidebar-menu>ul>li.mm-active>ins>a{background: #ecf6ff;}
+#sidebar-menu>ul>li>ins i{display:inline-block;line-height:1.25rem;margin:0 8px 0 5px;text-align:center;vertical-align:middle;width:20px;font-size:22px;}
+#sidebar-menu>ul>li>ins .drop-arrow{float:right;}
+#sidebar-menu>ul>li>ins .drop-arrow i{margin-right:0;}
+#sidebar-menu>ul>li>ins.active{color:#3679f7;background-color:#f1f5f7;}
+#sidebar-menu>ul>li>ul{padding-left:20px;}
+#sidebar-menu>ul>li>ul ul{padding-left:6px;}
+#sidebar-menu .menu-arrow{transition:transform .15s;position:absolute;right:20px;display:inline-block;font-family:'Material Design Icons';text-rendering:auto;font-size:1.1rem;transform:translate(0,0);}
+#sidebar-menu .menu-arrow:before{content:"\f105";}
+.icon-dian{ opacity: 0.7; }
+
+#sidebar-menu i.icon-menu-arrow-right{ transition:transform .15s;position:absolute;right:0px;display:inline-block;text-rendering:auto;font-size:1.1rem;transform:translate(0,0); color:#c0c0b7; }
+#sidebar-menu .mm-active i.icon-menu-arrow-right{ transform:rotate(90deg); }
+#sidebar-menu ul.nav-second-level li>ins>a>i.icon-menu-arrow-right{ top: 12px; right: 12px; transform:rotate(0deg); }
+#sidebar-menu ul.nav-second-level li.mm-active>ins>a>i.icon-menu-arrow-right{ transform:rotate(90deg); }
+#sidebar-menu .mm-active i.icon-menu-arrow-right{ transform:rotate(90deg); }
+#sidebar-menu>ul>li.sidebar-menu_logo{ display:none; }
+#sidebar-menu>ul>li.search_m1644{ display:none; }
+
+#sidebar-menu .badge{margin-top:4px;}
+#sidebar-menu li.mm-active>ins>a>span.menu-arrow{transform:rotate(90deg);}
+#sidebar-menu .menu-title{color:#5d6575;padding:12px 20px;letter-spacing:.07em;pointer-events:none;cursor:default;font-size:14px;margin:10px 0 0 0;}
+/*========================================================*/
+
+
+/*========================================================*/
+#sidebar-menu>ul>li>a{color:#5d6575;display:block;padding:14px 10px 14px 15px;position:relative;transition:all .4s;font-family:Barlow,sans-serif;font-size:15px;border-right:2px solid transparent;}
+#sidebar-menu>ul>li>a:active,#sidebar-menu>ul>li>a:focus,#sidebar-menu>ul>li>a:hover{color:#3679f7;text-decoration:none;background: #f8f8f8;}
+#sidebar-menu>ul>li.mm-active{ background: #f7fbff; }
+#sidebar-menu>ul>li.mm-active>a{background: #ecf6ff;}
+#sidebar-menu>ul>li>a i{display:inline-block;line-height:1.25rem;margin:0 8px 0 5px;text-align:center;vertical-align:middle;width:20px;font-size:22px;}
+#sidebar-menu>ul>li>a .drop-arrow{float:right;}
+#sidebar-menu>ul>li>a .drop-arrow i{margin-right:0;}
+#sidebar-menu>ul>li>a.active{color:#3679f7;background-color:#f1f5f7;}
+#sidebar-menu>ul>li>ul{padding-left:20px;}
+#sidebar-menu>ul>li>ul ul{padding-left:6px;}
+#sidebar-menu .menu-arrow{transition:transform .15s;position:absolute;right:20px;display:inline-block;font-family:'Material Design Icons';text-rendering:auto;font-size:1.1rem;transform:translate(0,0);}
+#sidebar-menu .menu-arrow:before{content:"\f105";}
+.icon-dian{ opacity: 0.7; }
+
+#sidebar-menu i.icon-menu-arrow-right{ transition:transform .15s;position:absolute;right:0px;display:inline-block;text-rendering:auto;font-size:1.1rem;transform:translate(0,0); color:#c0c0b7; }
+#sidebar-menu .mm-active i.icon-menu-arrow-right{ transform:rotate(90deg); }
+#sidebar-menu ul.nav-second-level li>a>i.icon-menu-arrow-right{ top: 12px; right: 12px; transform:rotate(0deg); }
+#sidebar-menu ul.nav-second-level li.mm-active>a>i.icon-menu-arrow-right{ transform:rotate(90deg); }
+#sidebar-menu .mm-active i.icon-menu-arrow-right{ transform:rotate(90deg); }
+#sidebar-menu>ul>li.sidebar-menu_logo{ display:none; }
+#sidebar-menu>ul>li.search_m1644{ display:none; }
+
+#sidebar-menu .badge{margin-top:4px;}
+#sidebar-menu li.mm-active>a>span.menu-arrow{transform:rotate(90deg);}
+#sidebar-menu .menu-title{color:#5d6575;padding:12px 20px;letter-spacing:.07em;pointer-events:none;cursor:default;font-size:14px;margin:10px 0 0 0;}
+
+
+/*收缩-图标版*/
+.enlarged .logo{width:70px!important;}
+.enlarged .logo span.logo-lg{display:none;}
+.enlarged .logo span.logo-sm{display:block;}
+.enlarged .left-side-menu{position:fixed;width:70px!important;z-index:5;}
+.enlarged .left-side-menu .slimScrollDiv,.enlarged .left-side-menu .slimscroll-menu{overflow:inherit!important;height:auto!important;}
+.enlarged .left-side-menu .slimScrollBar{visibility:hidden;}
+.enlarged .left-side-menu #sidebar-menu .badge,.enlarged .left-side-menu #sidebar-menu .label,.enlarged .left-side-menu #sidebar-menu .menu-arrow,.enlarged .left-side-menu #sidebar-menu .menu-title,.enlarged .left-side-menu #sidebar-menu .user-box{display:none!important;}
+.enlarged .left-side-menu #sidebar-menu>ul>li{position:relative;white-space:nowrap;}
+.enlarged .left-side-menu #sidebar-menu>ul>li>a{padding:15px 17px;min-height:54px;transition:none;}
+.enlarged .left-side-menu #sidebar-menu>ul>li>a:active,.enlarged .left-side-menu #sidebar-menu>ul>li>a:focus,.enlarged .left-side-menu #sidebar-menu>ul>li>a:hover{color:#3679f7;}
+.enlarged .left-side-menu #sidebar-menu>ul>li>a i{font-size:22px;margin-right:20px;}
+.enlarged .left-side-menu #sidebar-menu>ul>li>a span{display:none;padding-left:25px;}
+.enlarged .left-side-menu #sidebar-menu>ul>li:hover>a{position:relative;width:calc(190px + 70px);color:#c8cddc;background-color:#343b4a;transition:none;}
+.enlarged .left-side-menu #sidebar-menu>ul>li:hover>a span{display:inline;}
+.enlarged .left-side-menu #sidebar-menu>ul>li:hover a.mm-active :after,.enlarged .left-side-menu #sidebar-menu>ul>li:hover a.open :after{display:none;}
+.enlarged .left-side-menu #sidebar-menu>ul>li:hover>ul{display:block;left:70px;position:absolute;width:190px;height:auto!important;box-shadow:3px 5px 10px 0 rgba(154,161,171,.2);}
+.enlarged .left-side-menu #sidebar-menu>ul>li:hover>ul ul{box-shadow:3px 5px 10px 0 rgba(154,161,171,.2);}
+.enlarged .left-side-menu #sidebar-menu>ul>li:hover>ul a{box-shadow:none;padding:8px 20px;position:relative;width:190px;z-index:6;}
+.enlarged .left-side-menu #sidebar-menu>ul>li:hover>ul a:hover{color:#3679f7;}
+.enlarged .left-side-menu #sidebar-menu>ul ul{padding:5px 0;z-index:9999;display:none;background-color:#fff;}
+.enlarged .left-side-menu #sidebar-menu>ul ul li:hover>ul{display:block;left:190px;margin-top:-36px;height:auto!important;position:absolute;width:190px;}
+.enlarged .left-side-menu #sidebar-menu>ul ul li>a span.pull-right{position:absolute;right:20px;top:12px;transform:rotate(270deg);}
+.enlarged .left-side-menu #sidebar-menu>ul ul li.active a{color:#c8cddc;}
+.enlarged .content-page{margin-left:70px!important;}
+
+.enlarged #sidebar-menu i.icon-menu-arrow-right{ display:none; }
+.enlarged #sidebar-menu li ul li i.icon-menu-arrow-right{ display:inline-block; margin-right: 0px; top: 11px; }
+.sidebar-enable.enlarged .left-side-menu #sidebar-menu ul>li>ul.nav-second-level>li.mm-active a>i.icon-menu-arrow-right{ transform:rotate(0deg); }
+
+</style>
+</head>
+
+<body>
+
+<!-- Begin page -->
+<div id="wrapper">
+
+    <!-- Topbar Start -->
+    <div class="navbar-custom">
+        <ul class="topnav-menu float-right">
+
+            <li class="dropdown">
+                <a class="nav-link" data-toggle="dropdown" href="javascript:void(0);">
+                    <i class="iconfont icon-apple"></i>
+                    <span class="align-middle">Mac<i class="iconfont icon-dropdown-bottom"></i> </span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right">
+
+                    <!-- item-->
+                    <a href="windows.html" class="dropdown-item">
+                        <i class="iconfont icon-windows"></i> <span class="align-middle">Windows</span>
+                    </a>
+
+                    <!-- item-->
+                    <a href="mac.html" class="dropdown-item">
+                        <i class="iconfont icon-apple"></i> <span class="align-middle">Mac</span>
+                    </a>
+
+                    <!-- item-->
+                    <a href="android.html" class="dropdown-item">
+                        <i class="iconfont icon-android"></i> <span class="align-middle">Android</span>
+                    </a>
+
+                    <!-- item-->
+                    <a href="ios.html" class="dropdown-item">
+                        <i class="iconfont icon-apple"></i> <span class="align-middle">iOS</span>
+                    </a>
+
+                </div>
+            </li>
+
+        </ul>
+
+        <ul class="menu-left">
+            <li class="float-left">
+                <a href="index.html" class="logo">
+                    <span class="logo-lg">
+                        <img src="static/img/softku-logo.png" alt="">
+                    </span>
+                    <span class="logo-sm">
+                        <img src="static/img/softku-logo-sm.png" alt="">
+                    </span>
+                </a>
+            </li>
+            <li class="float-left">
+                <a class="button-menu-mobile navbar-toggle">
+                    <div class="lines">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </a>
+            </li>
+            <li class="app-search d-none d-md-block">
+                <form class="form-inline" action="search.html"> 
+                    <input name="s" type="text" class="form-control" placeholder="请输入您要搜索的内容..."> 
+                    <button class="btn btn-primary-color" type="submit"><i class="iconfont icon-search"></i></button> 
+                </form>
+            </li>
+        </ul>
+    </div>
+    <!-- end Topbar -->
+
+    <!-- ========== Left Sidebar Start ========== -->
+    <div class="left-side-menu">
+
+        <div class="slimscroll-menu">
+
+            <!--- Sidemenu -->
+            <div id="sidebar-menu">
+
+                <ul class="metismenu" id="side-menu">
+
+                    <li class="sidebar-menu_logo">
+                        <a href="index.html"><img src="static/img/softku-logo.png" alt=""></a>
+                    </li>
+
+                    <li class="search_m1644">
+                        <form class="form-inline" action="search.html"> 
+                            <input name="s" type="text" class="form-control" placeholder="Search..."> 
+                            <button class="btn btn-primary-color" type="submit"><i class="iconfont icon-search"></i></button> 
+                        </form>
+                    </li>
+
+                    <li>
+                        <ins><a href="index.html"><i class="iconfont icon-home"></i><span>首页</span></a></ins>
+                    </li>
+
+                    <li>
+                        <ins><a href="javascript:void(0);"><i class="iconfont icon-windows"></i><span>二级目录</span></a><i class="iconfont icon-menu-arrow-right"></i></ins>
+                        <ul class="nav-second-level nav" aria-expanded="false">
+                            <li>
+                                <a href="javascript:void(0);" aria-expanded="false"><i class="iconfont icon-wenjianjiafile mr-1"></i>图形图像<i class="iconfont icon-menu-arrow-right"></i></a>
+                                <ul class="nav-third-level nav" aria-expanded="false">
+                                    <li><a href="list.html"><i class="iconfont icon-dian"></i>Adobe系列</a></li>
+                                    <li><a href="list.html"><i class="iconfont icon-dian"></i>图形设计</a></li>
+                                    <li><a href="list.html"><i class="iconfont icon-dian"></i>图像浏览</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" aria-expanded="false"><i class="iconfont icon-wenjianjiafile mr-1"></i>多媒体类<i class="iconfont icon-menu-arrow-right"></i></a>
+                                <ul class="nav-third-level nav" aria-expanded="false">
+                                    <li><a href="#"><i class="iconfont icon-dian"></i>视频播放</a></li>
+                                    <li><a href="#"><i class="iconfont icon-dian"></i>音乐播放</a></li>
+                                    <li><a href="#"><i class="iconfont icon-dian"></i>视频转换</a></li>
+                                    <li><a href="#"><i class="iconfont icon-dian"></i>屏幕录制</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- ////////////////// -->
+                    <li><span style="padding: 15px 20px;font-size: 12px;color: #999;">上面是加了ins标签的</span></li>
+                    <!-- ////////////////// -->
+
+                    <li>
+                        <a href="index.html"><i class="iconfont icon-home"></i><span>首页</span></a>
+                    </li>
+
+                    <li>
+                        <a href="javascript:void(0);"><i class="iconfont icon-windows"></i><span>Windows</span></a><i class="iconfont icon-menu-arrow-right"></i>
+                        <ul class="nav-second-level nav" aria-expanded="false">
+                            <li>
+                                <a href="javascript:void(0);" aria-expanded="false"><i class="iconfont icon-wenjianjiafile mr-1"></i>图形图像<i class="iconfont icon-menu-arrow-right"></i></a>
+                                <ul class="nav-third-level nav" aria-expanded="false">
+                                    <li><a href="list.html"><i class="iconfont icon-dian"></i>Adobe系列</a></li>
+                                    <li><a href="list.html"><i class="iconfont icon-dian"></i>图形设计</a></li>
+                                    <li><a href="list.html"><i class="iconfont icon-dian"></i>图像浏览</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" aria-expanded="false"><i class="iconfont icon-wenjianjiafile mr-1"></i>多媒体类<i class="iconfont icon-menu-arrow-right"></i></a>
+                                <ul class="nav-third-level nav" aria-expanded="false">
+                                    <li><a href="#"><i class="iconfont icon-dian"></i>视频播放</a></li>
+                                    <li><a href="#"><i class="iconfont icon-dian"></i>音乐播放</a></li>
+                                    <li><a href="#"><i class="iconfont icon-dian"></i>视频转换</a></li>
+                                    <li><a href="#"><i class="iconfont icon-dian"></i>屏幕录制</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" aria-expanded="false"><i class="iconfont icon-wenjianjiafile mr-1"></i>实用工具<i class="iconfont icon-menu-arrow-right"></i></a>
+                                <ul class="nav-third-level nav" aria-expanded="false">
+                                    <li><a href="#"><i class="iconfont icon-dian"></i>浏览器</a></li>
+                                    <li><a href="#"><i class="iconfont icon-dian"></i>下载工具</a></li>
+                                    <li><a href="#"><i class="iconfont icon-dian"></i>科学上网</a></li>
+                                    <li><a href="#"><i class="iconfont icon-dian"></i>远程控制</a></li>
+                                    <li><a href="#"><i class="iconfont icon-dian"></i>站长工具</a></li>
+                                    <li><a href="#"><i class="iconfont icon-dian"></i>截图工具</a></li>
+                                    <li><a href="#"><i class="iconfont icon-dian"></i>系统工具</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" aria-expanded="false"><i class="iconfont icon-wenjianjiafile mr-1"></i>应用软件<i class="iconfont icon-menu-arrow-right"></i></a>
+                                <ul class="nav-third-level nav" aria-expanded="false">
+                                    <li><a href="#"><i class="iconfont icon-dian"></i>办公软件</a></li>
+                                    <li><a href="#"><i class="iconfont icon-dian"></i>文本编辑</a></li>
+                                    <li><a href="#"><i class="iconfont icon-dian"></i>解压软件</a></li>
+                                    <li><a href="#"><i class="iconfont icon-dian"></i>聊天软件</a></li>
+                                    <li><a href="#"><i class="iconfont icon-dian"></i>开发软件</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" aria-expanded="false"><i class="iconfont icon-wenjianjiafile mr-1"></i>系统相关<i class="iconfont icon-menu-arrow-right"></i></a>
+                                <ul class="nav-third-level nav" aria-expanded="false">
+                                    <li><a href="#"><i class="iconfont icon-dian"></i>虚拟机</a></li>
+                                    <li><a href="#"><i class="iconfont icon-dian"></i>开发环境</a></li>
+                                    <li><a href="#"><i class="iconfont icon-dian"></i>系统安全</a></li>
+                                    <li><a href="#"><i class="iconfont icon-dian"></i>Windows系统</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- <li>
+                        <a href="javascript:void(0);"><i class="iconfont icon-apple-mac"></i><span>Mac</span><i class="iconfont icon-menu-arrow-right"></i></a>
+                        <ul class="nav-second-level nav" aria-expanded="false">
+                            <li>
+                                <a href="javascript:void(0);" aria-expanded="false"><i class="iconfont icon-images mr-1"></i>图形图像<i class="iconfont icon-menu-arrow-right"></i></a>
+                                <ul class="nav-third-level nav" aria-expanded="false">
+                                    <li><a href="list.html"><i class="iconfont icon-dian"></i>Adobe系列</a></li>
+                                    <li><a href="list.html"><i class="iconfont icon-dian"></i>图形设计</a></li>
+                                    <li><a href="list.html"><i class="iconfont icon-dian"></i>图像浏览</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" aria-expanded="false"><i class="iconfont icon-shipin_1 mr-1"></i>多媒体类<i class="iconfont icon-menu-arrow-right"></i></a>
+                                <ul class="nav-third-level nav" aria-expanded="false">
+                                    <li><a href="#"><i class="iconfont icon-dian"></i>视频播放</a></li>
+                                    <li><a href="#"><i class="iconfont icon-dian"></i>音乐播放</a></li>
+                                    <li><a href="#"><i class="iconfont icon-dian"></i>视频转换</a></li>
+                                    <li><a href="#"><i class="iconfont icon-dian"></i>屏幕录制</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" aria-expanded="false"><i class="iconfont icon-tool mr-1"></i>实用工具<i class="iconfont icon-menu-arrow-right"></i></a>
+                                <ul class="nav-third-level nav" aria-expanded="false">
+                                    <li><a href="#"><i class="iconfont icon-dian"></i>浏览器</a></li>
+                                    <li><a href="#"><i class="iconfont icon-dian"></i>下载工具</a></li>
+                                    <li><a href="#"><i class="iconfont icon-dian"></i>科学上网</a></li>
+                                    <li><a href="#"><i class="iconfont icon-dian"></i>远程控制</a></li>
+                                    <li><a href="#"><i class="iconfont icon-dian"></i>站长工具</a></li>
+                                    <li><a href="#"><i class="iconfont icon-dian"></i>截图工具</a></li>
+                                    <li><a href="#"><i class="iconfont icon-dian"></i>系统工具</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" aria-expanded="false"><i class="iconfont icon-yingyong mr-1"></i>应用软件<i class="iconfont icon-menu-arrow-right"></i></a>
+                                <ul class="nav-third-level nav" aria-expanded="false">
+                                    <li><a href="#"><i class="iconfont icon-dian"></i>办公软件</a></li>
+                                    <li><a href="#"><i class="iconfont icon-dian"></i>文本编辑</a></li>
+                                    <li><a href="#"><i class="iconfont icon-dian"></i>解压软件</a></li>
+                                    <li><a href="#"><i class="iconfont icon-dian"></i>聊天软件</a></li>
+                                    <li><a href="#"><i class="iconfont icon-dian"></i>开发软件</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" aria-expanded="false"><i class="iconfont icon-settings1 mr-1"></i>系统相关<i class="iconfont icon-menu-arrow-right"></i></a>
+                                <ul class="nav-third-level nav" aria-expanded="false">
+                                    <li><a href="#"><i class="iconfont icon-dian"></i>虚拟机</a></li>
+                                    <li><a href="#"><i class="iconfont icon-dian"></i>开发环境</a></li>
+                                    <li><a href="#"><i class="iconfont icon-dian"></i>系统安全</a></li>
+                                    <li><a href="#"><i class="iconfont icon-dian"></i>MacOS系统</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="javascript:void(0);"><i class="iconfont icon-android"></i><span>Android</span><i class="iconfont icon-menu-arrow-right"></i></a>
+                        <ul class="nav-second-level nav" aria-expanded="false">
+                            <li>
+                                <a href="javascript:void(0);" aria-expanded="false"><i class="iconfont icon-shipin_1 mr-1"></i>多媒体类<i class="iconfont icon-menu-arrow-right"></i></a>
+                                <ul class="nav-third-level nav" aria-expanded="false">
+                                    <li><a href="#"><i class="iconfont icon-dian"></i>视频播放</a></li>
+                                    <li><a href="#"><i class="iconfont icon-dian"></i>音乐播放</a></li>
+                                    <li><a href="#"><i class="iconfont icon-dian"></i>短视频</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" aria-expanded="false"><i class="iconfont icon-tool mr-1"></i>实用工具<i class="iconfont icon-menu-arrow-right"></i></a>
+                                <ul class="nav-third-level nav" aria-expanded="false">
+                                    <li><a href="#"><i class="iconfont icon-dian"></i>浏览器</a></li>
+                                    <li><a href="#"><i class="iconfont icon-dian"></i>科学上网</a></li>
+                                    <li><a href="#"><i class="iconfont icon-dian"></i>远程控制</a></li>
+                                    <li><a href="#"><i class="iconfont icon-dian"></i>网盘同步</a></li>
+                                    <li><a href="#"><i class="iconfont icon-dian"></i>站长工具</a></li>
+                                    <li><a href="#"><i class="iconfont icon-dian"></i>其他</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" aria-expanded="false"><i class="iconfont icon-yingyong mr-1"></i>应用软件<i class="iconfont icon-menu-arrow-right"></i></a>
+                                <ul class="nav-third-level nav" aria-expanded="false">
+                                    <li><a href="#"><i class="iconfont icon-dian"></i>聊天软件</a></li>
+                                    <li><a href="#"><i class="iconfont icon-dian"></i>应用商店</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="javascript:void(0);"><i class="iconfont icon-apple"></i><span>iOS</span><i class="iconfont icon-menu-arrow-right"></i></a>
+                        <ul class="nav-second-level nav" aria-expanded="false">
+                            <li>
+                                <a href="javascript:void(0);" aria-expanded="false"><i class="iconfont icon-shipin_1 mr-1"></i>多媒体类<i class="iconfont icon-menu-arrow-right"></i></a>
+                                <ul class="nav-third-level nav" aria-expanded="false">
+                                    <li><a href="#"><i class="iconfont icon-dian"></i>视频播放</a></li>
+                                    <li><a href="#"><i class="iconfont icon-dian"></i>音乐播放</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" aria-expanded="false"><i class="iconfont icon-tool mr-1"></i>实用工具<i class="iconfont icon-menu-arrow-right"></i></a>
+                                <ul class="nav-third-level nav" aria-expanded="false">
+                                    <li><a href="#"><i class="iconfont icon-dian"></i>浏览器</a></li>
+                                    <li><a href="#"><i class="iconfont icon-dian"></i>科学上网</a></li>
+                                    <li><a href="#"><i class="iconfont icon-dian"></i>远程控制</a></li>
+                                    <li><a href="#"><i class="iconfont icon-dian"></i>网盘同步</a></li>
+                                    <li><a href="#"><i class="iconfont icon-dian"></i>站长工具</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" aria-expanded="false"><i class="iconfont icon-appstore mr-1"></i>应用软件<i class="iconfont icon-menu-arrow-right"></i></a>
+                                <ul class="nav-third-level nav" aria-expanded="false">
+                                    <li><a href="#"><i class="iconfont icon-dian"></i>聊天软件</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="javascript:void(0);"><i class="iconfont icon-package_full"></i><span>Public</span><i class="iconfont icon-menu-arrow-right"></i></a>
+                        <ul class="nav-second-level" aria-expanded="false">
+                            <li><a href="#"><i class="iconfont icon-dian"></i>应用插件</a></li>
+                            <li><a href="#"><i class="iconfont icon-dian"></i>CMS</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="javascript:void(0);"><i class="iconfont icon-zixun"></i><span>资讯</span><i class="iconfont icon-menu-arrow-right"></i></a>
+                        <ul class="nav-second-level" aria-expanded="false">
+                            <li><a href="artlist.html"><i class="iconfont icon-dian"></i>使用教程</a></li>
+                            <li><a href="artlist.html"><i class="iconfont icon-dian"></i>站内公告</a></li>
+                        </ul>
+                    </li> -->
+
+                </ul>
+
+            </div>
+            <!-- End Sidebar -->
+
+            <div class="clearfix"></div>
+
+        </div>
+        <!-- Sidebar -left -->
+    </div>
+    <div class="mini_side_menu_mohu"></div>
+    <!-- Left Sidebar End -->
+
+    <!-- ============================================================== -->
+    <!-- Start Page Content here -->
+    <!-- ============================================================== -->
+
+    <div class="content-page">
+        
+        <!-- 面包屑 -->
+        <nav class="mianbx">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#"><i class="iconfont icon-home_mbx"></i>首页</a></li>
+            <li class="breadcrumb-item"><a href="#">Windows</a></li>
+            <li class="breadcrumb-item"><a href="#">图形图像</a></li>
+            <li class="breadcrumb-item">Adobe系列</li>
+          </ol>
+        </nav>
+
+        <!-- Content start -->
+        <div class="content">
+            <div id="content" class="content-wrap">
+                <div class="d-flex mt-4">
+                巴拉巴拉
+                </div>
+            </div>
+        </div> 
+        <!-- content -->
+
+        <!-- Footer Start -->
+        <footer class="footer text-muted text-sm mt-4">
+            <div class="container-fluid">
+                <div class="text-center">
+                    
+                    <div class="col-12 ">
+                        <a class="footer-logo" href="https://nav.iowen.cn">
+                            <img src="static/img/softku-logo.png" class="logo-light mb-1" alt="" height="32">
+                        </a>
+                    </div>
+
+                    <div class="col-md-12 text-muted text-center my-2"> 
+                        <p class="footer-links text-sm mb-2">
+                            <a href="#">免责声明</a>
+                            <a href="#">我要投稿</a>
+                            <a href="#">留言反馈</a>
+                            <a href="#">关于我们</a>
+                        </p>                                        
+                        <div class="footer-social my-2">
+                            <!-- <a class="rounded-circle bg-light qr-img" href="javascript:;" data-toggle="tooltip" data-placement="top" data-html="true" title="" data-original-title="<img src='static/img/qr/wechat_qrcode.png' height='100' width='100'>"><i class="iconfont icon-weixin"></i></a> -->
+                            <a class="rounded-circle bg-light" href="mqqwpa://im/chat?chat_type=wpa&amp;uin=12345678&amp;version=1&amp;src_type=web&amp;web_src=oicqzone.com" target="_blank" data-toggle="tooltip" data-placement="top" title="QQ" rel="external noopener nofollow">
+                            <i class="iconfont icon-qq"></i></a>
+                            <a class="rounded-circle bg-light" href="#" target="_blank" data-toggle="tooltip" data-placement="top" title="Telegram" rel="external noopener nofollow"><i class="iconfont icon-telegram"></i></a> 
+                            <a class="rounded-circle bg-light" href="mailto:ruanjian@email.com" target="_blank" data-toggle="tooltip" data-placement="top" title="E-Mail" rel="external noopener nofollow"><i class="iconfont icon-email"></i></a>                   
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        Copyright © <span class="dqnianfen"><script>window.onload=function(){var currentYear=new Date().getFullYear();var yearElement=document.querySelector('.dqnianfen');if(yearElement){yearElement.textContent=currentYear}};</script></span> ( <span class="yuming"><script language="javascript">host=document.domain;document.write(host)</script></span> ) <span class="pozhehao">- </span><br><span class="foot_domain">Powered by 软件宝库</span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- end Footer -->
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- End Page content -->
+    <!-- ============================================================== -->
+
+</div>
+<!-- END wrapper -->
+
+<!-- Vendor js -->
+<script src="static/js/vendor.min.js"></script>
+<!-- App js -->
+<script src="static/js/app.min.js"></script>
+
+</body>
+</html>
