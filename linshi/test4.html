@@ -5,81 +5,59 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">  
 <title>下载按钮</title>  
 <style>  
-  /* 样式可以根据实际需要进行调整 */  
-  .btn-danger {  
-    background-color: red;  
-    color: white;  
-    border: none;  
-    padding: 10px 20px;  
-    text-align: center;  
-    text-decoration: none;  
-    display: inline-block;  
-    font-size: 16px;  
-    margin: 4px 2px;  
-    cursor: pointer;  
-  }  
-    
-  .text-right {  
-    text-align: right;  
-  }  
+/* 这里是你的CSS样式，根据需要调整 */  
 </style>  
-</head>  
-<body>  
-
-
-<div class="io-modal-content">
-  <div class="down_btn_list mb-0">
-      <div class="row text-center">
-          <div class="col-5 text-left down_qd"><span class="baiduwangpan"><i class="iconfont icon-baiduwangpan mr-2"></i>百度网盘</span></div>
-          <div class="col d-none d-lg-block down_sud"></div>
-          <div class="col" style="white-space: nowrap;">GalM</div>
-          <div class="col text-right"><a class="btn btn-sm btn-primary px-2" href="https://www.123pan.com/s/sQGrVv-LySAH.html" target="_blank" data-clipboard-text="GalM" rel="noopener noreferrer nofollow">下载</a></div>
-      </div>
-      <div class="col-12 line-thead my-2" style="height:1px;background: rgba(136, 136, 136, 0.2);"></div>
-  </div>
-
-  <div class="down_btn_list mb-0">
-      <div class="row text-center">
-          <div class="col-5 text-left down_qd"><span class="baiduwangpan"><i class="iconfont icon-baiduwangpan mr-2"></i>阿里云盘</span></div>
-          <div class="col d-none d-lg-block down_sud"></div>
-          <div class="col" style="white-space: nowrap;">emaA</div>
-          <div class="col text-right"><a class="btn btn-sm btn-primary px-2" href="https://www.123pan.com/s/sQGrVv-LySAH.html" target="_blank" data-clipboard-text="emaA" rel="noopener noreferrer nofollow">下载</a></div>
-      </div>
-      <div class="col-12 line-thead my-2" style="height:1px;background: rgba(136, 136, 136, 0.2);"></div>
-  </div>
-</div>
-
-
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>  
 <script>  
+// 确保在文档加载完成后执行  
 document.addEventListener('DOMContentLoaded', function() {  
-  var downloadButtons = document.querySelectorAll('.btn-danger');  
-    
+  // 获取所有的下载按钮  
+  var downloadButtons = document.querySelectorAll('.btn-primary');  
+  
+  // 遍历下载按钮并添加点击事件监听  
   downloadButtons.forEach(function(button) {  
-    button.addEventListener('click', function(e) {  
-      e.preventDefault(); // 阻止默认的链接跳转行为  
-        
+    button.addEventListener('click', function(event) {  
+      event.preventDefault(); // 阻止链接的默认行为  
       var clipboardText = this.getAttribute('data-clipboard-text'); // 获取data-clipboard-text的值  
         
-      // 使用navigator.clipboard.writeText复制文本到剪贴板  
+      // 复制文本到剪贴板  
       navigator.clipboard.writeText(clipboardText).then(function() {  
-        // 复制成功，显示弹窗提示  
-        alert('复制成功，点“确定”进入到下载页面');  
+        // 显示弹窗  
+        alert('复制成功，点“确定”进入到下载页面。');  
           
-        // 点击确定后，在新窗口打开下载链接  
-        var href = this.getAttribute('href');  
-        window.open(href, '_blank'); // 在新窗口打开下载页面  
+        // 延迟打开新窗口，防止浏览器阻止弹窗  
+        setTimeout(function() {  
+          window.open(this.getAttribute('href'), '_blank'); // 打开新窗口跳转到链接  
+        }.bind(this), 100); // 使用bind确保this指向正确的按钮  
       }).catch(function(err) {  
-        // 复制失败，显示错误  
         console.error('无法复制文本: ', err);  
-        alert('复制失败，请尝试手动复制。');  
       });  
     });  
   });  
 });  
-</script> 
-
-
+</script>  
+</head>  
+<body>  
+  
+<div class="down_btn_list">
+  <div class="row">
+    <div class="col-6 col-md-7">2018</div>
+    <div class="col-2 col-md-2">GalM</div>
+    <div class="col-4 col-md-3 text-right">
+      <a class="btn btn-primary" href="kkkb.html" target="_blank" data-clipboard-text="GalM" data-mmid="down-mm-0">123下载</a>
+  </div>
+  <div class="row">
+    <div class="col-6 col-md-7">2019</div>
+    <div class="col-2 col-md-2">emaA</div>
+    <div class="col-4 col-md-3 text-right">
+      <a class="btn btn-primary" href="kkkh.html" target="_blank" data-clipboard-text="emaA" data-mmid="down-mm-1">123下载</a></div>
+  </div>
+  <div class="row">
+    <div class="col-6 col-md-7">2020</div>
+    <div class="col-2 col-md-2">yT3N</div>
+    <div class="col-4 col-md-3 text-right">
+      <a class="btn btn-primary" href="kkk3.html" target="_blank" data-clipboard-text="yT3N" data-mmid="down-mm-2">123下载</a></div>
+  </div>
+</div> 
   
 </body>  
 </html>
