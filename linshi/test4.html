@@ -33,7 +33,7 @@
           <div class="col-5 text-left down_qd"><span class="baiduwangpan"><i class="iconfont icon-baiduwangpan mr-2"></i>百度网盘</span></div>
           <div class="col d-none d-lg-block down_sud"></div>
           <div class="col" style="white-space: nowrap;">GalM</div>
-          <div class="col text-right"><a class="btn btn-sm btn-primary px-2" href="kkk.html" target="_blank" data-clipboard-text="GalM" rel="noopener noreferrer nofollow">下载</a></div>
+          <div class="col text-right"><a class="btn btn-sm btn-primary px-2" href="https://www.123pan.com/s/sQGrVv-LySAH.html" target="_blank" data-clipboard-text="GalM" rel="noopener noreferrer nofollow">下载</a></div>
       </div>
       <div class="col-12 line-thead my-2" style="height:1px;background: rgba(136, 136, 136, 0.2);"></div>
   </div>
@@ -43,32 +43,43 @@
           <div class="col-5 text-left down_qd"><span class="baiduwangpan"><i class="iconfont icon-baiduwangpan mr-2"></i>阿里云盘</span></div>
           <div class="col d-none d-lg-block down_sud"></div>
           <div class="col" style="white-space: nowrap;">emaA</div>
-          <div class="col text-right"><a class="btn btn-sm btn-primary px-2" href="kkk.html" target="_blank" data-clipboard-text="emaA" rel="noopener noreferrer nofollow">下载</a></div>
+          <div class="col text-right"><a class="btn btn-sm btn-primary px-2" href="https://www.123pan.com/s/sQGrVv-LySAH.html" target="_blank" data-clipboard-text="emaA" rel="noopener noreferrer nofollow">下载</a></div>
       </div>
       <div class="col-12 line-thead my-2" style="height:1px;background: rgba(136, 136, 136, 0.2);"></div>
   </div>
-</div> 
+</div>
+
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>  
 <script>  
-$(document).ready(function() {  
-  $('.btn-primary').on('click', function(e) {  
-    e.preventDefault(); // 阻止a标签的默认跳转行为  
-    var clipboardText = $(this).data('clipboard-text'); // 获取data-clipboard-text的值  
-    try {  
-      var successful = document.execCommand('copy', true, clipboardText);  
-      var msg = successful ? '复制成功' : '复制失败';  
-      alert(msg); // 弹窗提示复制成功或失败  
+document.addEventListener('DOMContentLoaded', function() {  
+  var downloadButtons = document.querySelectorAll('.btn-danger');  
+    
+  downloadButtons.forEach(function(button) {  
+    button.addEventListener('click', function(e) {  
+      e.preventDefault(); // 阻止默认的链接跳转行为  
         
-      // 点击确定后跳转到下载页面  
-      var href = $(this).attr('href');  
-      window.open(href, '_blank'); // 在新窗口打开下载页面  
-    } catch (err) {  
-      console.error('复制失败: ', err);  
-    }  
+      var clipboardText = this.getAttribute('data-clipboard-text'); // 获取data-clipboard-text的值  
+        
+      // 使用navigator.clipboard.writeText复制文本到剪贴板  
+      navigator.clipboard.writeText(clipboardText).then(function() {  
+        // 复制成功，显示弹窗提示  
+        alert('复制成功，点“确定”进入到下载页面');  
+          
+        // 点击确定后，在新窗口打开下载链接  
+        var href = this.getAttribute('href');  
+        window.open(href, '_blank'); // 在新窗口打开下载页面  
+      }).catch(function(err) {  
+        // 复制失败，显示错误  
+        console.error('无法复制文本: ', err);  
+        alert('复制失败，请尝试手动复制。');  
+      });  
+    });  
   });  
 });  
-</script>
+</script> 
+
+
   
 </body>  
 </html>
