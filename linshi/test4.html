@@ -49,31 +49,25 @@
   </div>
 </div> 
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>  
 <script>  
-  // 获取所有的下载按钮  
-  const downloadButtons = document.querySelectorAll('.btn-primary');  
-  
-  downloadButtons.forEach(button => {  
-    button.addEventListener('click', function(event) {  
-      event.preventDefault(); // 阻止默认的链接跳转行为  
-  
-      // 获取data-clipboard-text的值和href属性值  
-      const clipboardText = this.getAttribute('data-clipboard-text');  
-      // const downloadLink = this.getAttribute('href');  
-  
-      // 复制文本到剪贴板  
-      navigator.clipboard.writeText(clipboardText).then(() => {  
-        // 显示确认弹窗  
-        if (confirm('复制成功，是否继续在新窗口打开下载页面？')) {  
-          // 用户点击了“确定”，在新窗口打开链接  
-          window.open(downloadLink, '_blank');  
-        }  
-      }).catch(err => {  
-        console.error('复制失败:', err);  
-        alert('复制失败，请检查您的浏览器设置。');  
-      });  
-    });  
+$(document).ready(function() {  
+  $('.btn-primary').on('click', function(e) {  
+    e.preventDefault(); // 阻止a标签的默认跳转行为  
+    var clipboardText = $(this).data('clipboard-text'); // 获取data-clipboard-text的值  
+    try {  
+      var successful = document.execCommand('copy', true, clipboardText);  
+      var msg = successful ? '复制成功' : '复制失败';  
+      alert(msg); // 弹窗提示复制成功或失败  
+        
+      // 点击确定后跳转到下载页面  
+      var href = $(this).attr('href');  
+      window.open(href, '_blank'); // 在新窗口打开下载页面  
+    } catch (err) {  
+      console.error('复制失败: ', err);  
+    }  
   });  
+});  
 </script>
   
 </body>  
