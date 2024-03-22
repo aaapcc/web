@@ -5,36 +5,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">  
 <title>下载按钮</title>  
 <style>  
-/* 这里是你的CSS样式，根据需要调整 */  
+  /* 样式可以根据实际需要进行调整 */  
+  .btn-danger {  
+    background-color: red;  
+    color: white;  
+    border: none;  
+    padding: 10px 20px;  
+    text-align: center;  
+    text-decoration: none;  
+    display: inline-block;  
+    font-size: 16px;  
+    margin: 4px 2px;  
+    cursor: pointer;  
+  }  
+    
+  .text-right {  
+    text-align: right;  
+  }  
 </style>  
-<script>  
-// 确保在文档加载完成后执行  
-document.addEventListener('DOMContentLoaded', function() {  
-  // 获取所有的下载按钮  
-  var downloadButtons = document.querySelectorAll('.btn-primary');  
-  
-  // 遍历下载按钮并添加点击事件监听  
-  downloadButtons.forEach(function(button) {  
-    button.addEventListener('click', function(event) {  
-      event.preventDefault(); // 阻止链接的默认行为  
-      var clipboardText = this.getAttribute('data-clipboard-text'); // 获取data-clipboard-text的值  
-        
-      // 复制文本到剪贴板  
-      navigator.clipboard.writeText(clipboardText).then(function() {  
-        // 显示弹窗  
-        alert('复制成功，点“确定”进入到下载页面。');  
-          
-        // 延迟打开新窗口，防止浏览器阻止弹窗  
-        setTimeout(function() {  
-          window.open(this.getAttribute('href'), '_blank'); // 打开新窗口跳转到链接  
-        }.bind(this), 100); // 使用bind确保this指向正确的按钮  
-      }).catch(function(err) {  
-        console.error('无法复制文本: ', err);  
-      });  
-    });  
-  });  
-});  
-</script>  
 </head>  
 <body>  
   
@@ -57,7 +45,35 @@ document.addEventListener('DOMContentLoaded', function() {
     <div class="col-4 col-md-3 text-right">
       <a class="btn btn-primary" href="kkk3.html" target="_blank" data-clipboard-text="yT3N" data-mmid="down-mm-2">123下载</a></div>
   </div>
-</div> 
+</div>
+  
+
+<script>  
+  // 获取所有的下载按钮  
+  const downloadButtons = document.querySelectorAll('.btn-primary');  
+  
+  downloadButtons.forEach(button => {  
+    button.addEventListener('click', function(event) {  
+      event.preventDefault(); // 阻止默认的链接跳转行为  
+  
+      // 获取data-clipboard-text的值  
+      const clipboardText = this.getAttribute('data-clipboard-text');  
+  
+      // 复制文本到剪贴板  
+      navigator.clipboard.writeText(clipboardText).then(() => {  
+        // 显示弹窗  
+        alert('复制成功，点“确定”进入到下载页面');  
+  
+        // 点击弹窗确定后，跳转到链接  
+        setTimeout(() => {  
+          window.location.href = this.getAttribute('href');  
+        }, 0);  
+      }).catch(err => {  
+        console.error('复制失败:', err);  
+      });  
+    });  
+  });  
+</script> 
   
 </body>  
 </html>
