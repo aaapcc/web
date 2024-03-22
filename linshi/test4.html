@@ -1,0 +1,80 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+<title>下载按钮</title>  
+<style>  
+  /* 样式可以根据实际需要进行调整 */  
+  .btn-danger {  
+    background-color: red;  
+    color: white;  
+    border: none;  
+    padding: 10px 20px;  
+    text-align: center;  
+    text-decoration: none;  
+    display: inline-block;  
+    font-size: 16px;  
+    margin: 4px 2px;  
+    cursor: pointer;  
+  }  
+    
+  .text-right {  
+    text-align: right;  
+  }  
+</style>  
+</head>  
+<body>  
+
+
+<div class="io-modal-content">
+  <div class="down_btn_list mb-0">
+      <div class="row text-center">
+          <div class="col-5 text-left down_qd"><span class="baiduwangpan"><i class="iconfont icon-baiduwangpan mr-2"></i>百度网盘</span></div>
+          <div class="col d-none d-lg-block down_sud"></div>
+          <div class="col" style="white-space: nowrap;">GalM</div>
+          <div class="col text-right"><a class="btn btn-sm btn-primary px-2" href="https://www.123pan.com/s/sQGrVv-LySAH.html" target="_blank" data-clipboard-text="GalM" rel="noopener noreferrer nofollow">下载</a></div>
+      </div>
+      <div class="col-12 line-thead my-2" style="height:1px;background: rgba(136, 136, 136, 0.2);"></div>
+  </div>
+
+  <div class="down_btn_list mb-0">
+      <div class="row text-center">
+          <div class="col-5 text-left down_qd"><span class="baiduwangpan"><i class="iconfont icon-baiduwangpan mr-2"></i>阿里云盘</span></div>
+          <div class="col d-none d-lg-block down_sud"></div>
+          <div class="col" style="white-space: nowrap;">emaA</div>
+          <div class="col text-right"><a class="btn btn-sm btn-primary px-2" href="https://www.123pan.com/s/sQGrVv-LySAH.html" target="_blank" data-clipboard-text="emaA" rel="noopener noreferrer nofollow">下载</a></div>
+      </div>
+      <div class="col-12 line-thead my-2" style="height:1px;background: rgba(136, 136, 136, 0.2);"></div>
+  </div>
+</div>
+  
+<script>  
+  // 获取所有的下载按钮  
+  const downloadButtons = document.querySelectorAll('.btn-primary');  
+  
+  downloadButtons.forEach(button => {  
+    button.addEventListener('click', function(event) {  
+      event.preventDefault(); // 阻止默认的链接跳转行为  
+  
+      // 获取data-clipboard-text的值  
+      const clipboardText = this.getAttribute('data-clipboard-text');  
+  
+      // 复制文本到剪贴板  
+      navigator.clipboard.writeText(clipboardText).then(() => {  
+        // 显示弹窗  
+        alert('复制成功，点“确定”进入到下载页面');  
+  
+        // 点击弹窗确定后，跳转到链接  
+        setTimeout(() => {  
+          window.location.href = this.getAttribute('href');  
+        }, 0);  
+      }).catch(err => {  
+        console.error('复制失败:', err);  
+      });  
+    });  
+  });  
+</script>  
+  
+</body>  
+</html>
