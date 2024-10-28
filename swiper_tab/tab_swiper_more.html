@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Tab+Swiper滑动支持多个</title>
+    <link rel="stylesheet" href="https://dy.aaqq.site/static/nasdy/public/Swiper/3.4.1/css/swiper.min.css">
+    <style>
+        body {
+            background: #eee;
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color: #000;
+            margin: 0;
+            padding: 0;
+        }
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            border: 1px solid #ccc;
+            background: #fff;
+            margin: 0 5px;
+            transition: background 0.3s;
+        }
+        .tab.current {
+            background: #007BFF;
+            color: #fff;
+            border: 1px solid #007BFF;
+        }
+
+        .swiper-container {
+            width: 500px;
+            height: 300px;
+            margin: 0 auto;
+        }
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            line-height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="tabs">
+        <div class="tab current">Tab 1</div>
+        <div class="tab">Tab 2</div>
+        <div class="tab">Tab 3</div>
+        <div class="tab">Tab 4</div>
+    </div>
+
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">Slide 1 in Tab 1</div>
+            <div class="swiper-slide">Slide 1 in Tab 2</div>
+            <div class="swiper-slide">Slide 1 in Tab 3</div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+
+    <div class="swiper-container" style="display:none;">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">Slide 2 in Tab 1</div>
+            <div class="swiper-slide">Slide 2 in Tab 2</div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+
+    <div class="swiper-container" style="display:none;">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">Slide 3 in Tab 1</div>
+            <div class="swiper-slide">Slide 3 in Tab 2</div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+
+    <div class="swiper-container" style="display:none;">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">Slide 4 in Tab 1</div>
+            <div class="swiper-slide">Slide 4 in Tab 2</div>
+            <div class="swiper-slide">Slide 4 in Tab 3</div>
+            <div class="swiper-slide">Slide 4 in Tab 4</div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+
+    <script src="https://dy.aaqq.site/static/nasdy/public/Swiper/3.4.1/js/swiper.min.js"></script>
+    <script>
+        const tabs = document.querySelectorAll('.tab');
+        const swipers = document.querySelectorAll('.swiper-container');
+        let swiperInstances = [];
+
+        // Initialize Swiper for the first container
+        swiperInstances[0] = new Swiper(swipers[0], {
+            nextButton: '.swiper-button-next',
+            prevButton: '.swiper-button-prev',
+            pagination: '.swiper-pagination',
+            paginationType: 'fraction',
+            speed: 300,
+            effect: 'fade',
+        });
+
+        // Tab click event
+        tabs.forEach((tab, index) => {
+            tab.addEventListener('click', () => {
+                // Change current tab
+                tabs.forEach(t => t.classList.remove('current'));
+                tab.classList.add('current');
+
+                // Show corresponding swiper and hide others
+                swipers.forEach((swiperContainer, i) => {
+                    if (i === index) {
+                        swiperContainer.style.display = 'block';
+                        if (!swiperInstances[i]) {
+                            swiperInstances[i] = new Swiper(swiperContainer, {
+                                nextButton: '.swiper-button-next',
+                                prevButton: '.swiper-button-prev',
+                                pagination: '.swiper-pagination',
+                                paginationType: 'fraction',
+                                speed: 300,
+                                effect: 'fade',
+                            });
+                        }
+                    } else {
+                        swiperContainer.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
