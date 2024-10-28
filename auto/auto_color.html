@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自动背景颜色</title>
+    <style>
+        .tag_vip {background-color: red; color: white;}
+        .tag_buy {background-color: blue;color: white;}
+        .tag_free {background-color: green;color: white;}
+    </style>
+</head>
+<body>
+    <ul class="img-list">
+        <li><i>VIP</i></li> <!-- 会应用颜色 -->
+        <li><i>付费</i></li> <!-- 会应用颜色 -->
+        <li><i>免费</i></li> <!-- 会应用颜色 -->
+    </ul>
+
+    <ul>
+        <li><i>VIP</i></li> <!-- 不会应用颜色 -->
+        <li><i>付费</i></li> <!-- 不会应用颜色 -->
+        <li><i>免费</i></li> <!-- 不会应用颜色 -->
+    </ul>
+
+    <script>const items=document.querySelectorAll("ul.img-list i");items.forEach(item=>{switch(item.textContent){case"VIP":item.classList.add("tag_vip");break;case"付费":item.classList.add("tag_buy");break;case"免费":item.classList.add("tag_free");break}});</script>
+</body>
+</html>
