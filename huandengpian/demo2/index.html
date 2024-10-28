@@ -1,0 +1,40 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jquery图片旋转切换效果代码</title>
+<link rel="stylesheet" href="css/DB_tab29.css" type="text/css"></link>
+
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script> 
+<script type="text/javascript" src="js/jquery.DB_rotateRollingBanner.min.js"></script>
+</head>
+
+<body>
+<div id="d_tab29">
+	<ul class="d_img">			
+		<li class="d_pos1"><img src="img/img9.jpg" alt=""/></li>
+		<li class="d_pos2"><img src="img/img10.jpg" alt=""/></li>
+		<li class="d_pos3"><img src="img/img1.jpg" alt=""/></li>
+		<li class="d_pos4"><img src="img/img2.jpg" alt=""/></li>
+		<li class="d_pos5"><img src="img/img3.jpg" alt=""/></li>
+		<li><img src="img/img4.jpg"></li>
+		<li><img src="img/img5.jpg"></li>
+		<li><img src="img/img6.jpg"></li>
+		<li><img src="img/img7.jpg"></li>
+		<li><img src="img/img8.jpg"></li>
+	</ul>	
+	<ul class="d_menu"></ul>
+	<p class="d_prev"><img src="img/prev.png" alt=""></p>
+	<p class="d_next"><img src="img/next.png" alt=""></p>
+</div>
+
+<script type="text/javascript">
+$('#d_tab29').DB_rotateRollingBanner({
+	key:"c37080",            
+	moveSpeed:200,           
+	autoRollingTime:5000      
+})
+</script>
+</body>
+</html>
