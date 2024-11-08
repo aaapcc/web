@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>基于Swiper.js的移动端图片滑块插件DEMO演示</title>
+<link rel="stylesheet" href="https://dy.aaqq.site/static/nasdy/public/Swiper/3.4.1/css/swiper.min.css">
+<link rel="stylesheet" href="https://at.alicdn.com/t/c/font_4725233_znovmbzcm6.css" />
+<script src="https://dy.aaqq.site/static/nasdy/public/Swiper/3.4.1/js/swiper.min.js"></script>
+<style>
+body { background: #121212; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 14px; color: #000; margin: 0; padding: 0; }
+
+.focus-swiper-container { width: 100%; display: block; margin: 0; position: relative; overflow: hidden; }
+/* 最中间图片放大 */
+.focus-swiper-container .swiper-slide { -webkit-transform: scale(1.44); transform: scale(1.44); transition: transform 0.3s ease; }
+.focus-swiper-container .swiper-slide a em{ background: rgba(0,0,0,.8); width: 100%; height: 100%; display: block; position: absolute; top: 0px; left: 0px; }
+.focus-swiper-container .swiper-slide.swiper-slide-active, .focus-swiper-container .swiper-slide-center.swiper-slide-active { -webkit-transform: scale(1.7); transform: scale(1.7); }
+.focus-swiper-container .swiper-slide.swiper-slide-active a em, .focus-swiper-container .swiper-slide-center.swiper-slide-active a em{ display: none; }
+/* 多张图时，正中间 */
+.focus-swiper-container .swiper-slide.swiper-slide-active { z-index: 100; }
+.focus-swiper-container .none-effect { transition: none; }
+.focus-swiper-container .swiper-slide a { display: block; position: relative; }
+.focus-swiper-container .swiper-slide img { width: 100%; height: auto; border-radius: 4px; display: block; object-fit: cover; }
+
+/* 按钮 */
+.focus-swiper-container .button{ opacity: 0; }
+.focus-swiper-container:hover .button { opacity: 1; }
+.focus-swiper-container .button div:hover { background-color: rgba(255,255,255,.3); }
+.focus-swiper-container .swiper-button-prev, .focus-swiper-container .swiper-button-next{ width: 34px; height: 34px; border-radius: 50%; background: rgba(255,255,255,.05); }
+.focus-swiper-container .swiper-button-prev{ left: 20px; }
+.focus-swiper-container .swiper-button-next{ right: 20px; }
+.focus-swiper-container .button i.iconfont{ width: 15px; height: 15px; display: block; font-size: 14px; margin: 9px auto 0px; color: #fff; }
+
+.focus-swiper-container{ height: 452px; }
+.focus-swiper-container .swiper-slide{ padding-top: 109px; }
+.focus-swiper-container .swiper-slide.swiper-slide-active{ padding-top: 117px; }
+</style>
+</head>
+<body>
+
+<div class="focus-swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide swiper-slide-center none-effect"><a href="#"><em></em><img src="https://live.staticflickr.com/65535/54125311564_7493cce2fc_o_d.jpg"></a></div>
+        <div class="swiper-slide"><a href="#"><em></em><img src="https://live.staticflickr.com/65535/54124966176_017ef8f721_o_d.jpg"></a></div>
+        <div class="swiper-slide"><a href="#"><em></em><img src="https://live.staticflickr.com/65535/54124966156_169657eff5_o_d.jpg"></a></div>
+        <div class="swiper-slide"><a href="#"><em></em><img src="https://live.staticflickr.com/65535/54125311589_4ae5d64c07_o_d.jpg"></a></div>
+        <div class="swiper-slide"><a href="#"><em></em><img src="https://live.staticflickr.com/65535/54125419595_9c8490b85b_o_d.jpg"></a></div>
+        <div class="swiper-slide"><a href="#"><em></em><img src="https://live.staticflickr.com/65535/54124966161_3b3361cfca_o_d.jpg"></a></div>
+        <div class="swiper-slide"><a href="#"><em></em><img src="https://live.staticflickr.com/65535/54125419590_4654386f51_o_d.jpg"></a></div>
+    </div>
+
+    <div class="button">
+        <div class="swiper-button-prev"><i class="iconfont icon-jt-left"></i></div>
+        <div class="swiper-button-next"><i class="iconfont icon-jt-right"></i></div>
+    </div>
+</div>
+
+
+<script>
+window.onload = function() {
+    var swiper = new Swiper('.focus-swiper-container', {
+        autoplay: 5000,
+        speed: 300,
+        autoplayDisableOnInteraction: false,
+        loop: true,
+        centeredSlides: true,
+        slidesPerView: 2,
+
+        prevButton: '.swiper-button-prev',
+        nextButton: '.swiper-button-next',
+    });
+}
+</script>
+
+</body>
+</html>
